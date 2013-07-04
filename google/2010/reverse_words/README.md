@@ -1,33 +1,33 @@
 Reverse words
 ===========
 
-# Problem
+## Problem
 
 Given a list of space separated words, reverse the order of the words. Each line
 of text contains L letters and W words. A line will only consist of letters and
 space characters. There will be exactly one space character between each pair of
 consecutive words.
 
-# Input
+## Input
 
 The first line of input gives the number of cases, N.
 N test cases follow. For each test case there will a line of letters and space
 characters indicating a list of space separated words. Spaces will not appear at
 the start or end of a line.
 
-# Output
+## Output
 
 For each test case, output one line containing "Case #x: " followed by the list
 of words in reverse order.
 
-# Limits
+## Limits
 
-## Small dataset
+### Small dataset
 
 N = 5
 1 ≤ L ≤ 25
 
-## Large dataset
+### Large dataset
 
 N = 100
 1 ≤ L ≤ 1000
