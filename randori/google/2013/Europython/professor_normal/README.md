@@ -82,38 +82,38 @@ Each child will start with at most 1012 marbles.
 
 ### Input
 
-6
-3
-3
-12 12 12
-12 12 12
-12 12 12
-2
-3
-12 12 12
-12 12 12
-2
-2
-12 13
-14 15
-2
-3
-11 12 11
-20 14 20
-1
-1
-74
-2
-2
-10 12
-12 12
+    6
+    3
+    3
+    12 12 12
+    12 12 12
+    12 12 12
+    2
+    3
+    12 12 12
+    12 12 12
+    2
+    2
+    12 13
+    14 15
+    2
+    3
+    11 12 11
+    20 14 20
+    1
+    1
+    74
+    2
+    2
+    10 12
+    12 12
 
 ### Output
 
-Case #1: 2 turns
-Case #2: 2 children will play forever
-Case #3: 4 children will play forever
-Case #4: 2 turns
-Case #5: 0 turns
-Case #6: 1 turns
+    Case #1: 2 turns
+    Case #2: 2 children will play forever
+    Case #3: 4 children will play forever
+    Case #4: 2 turns
+    Case #5: 0 turns
+    Case #6: 1 turns
 

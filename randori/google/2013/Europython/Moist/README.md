@@ -53,17 +53,17 @@ Lexicographically, the space character comes first, then come the upper case let
 ## Sample
 
 ### Input
-2
-2
-Oksana Baiul
-Michelle Kwan
-3
-Elvis Stojko
-Evgeni Plushenko
-Kristi Yamaguchi
+    2
+    2
+    Oksana Baiul
+    Michelle Kwan
+    3
+    Elvis Stojko
+    Evgeni Plushenko
+    Kristi Yamaguchi
 
 ### Output
 
-Case #1: 1
-Case #2: 0
+    Case #1: 1
+    Case #2: 0
 
