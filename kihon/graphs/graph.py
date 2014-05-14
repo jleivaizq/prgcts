@@ -1,17 +1,19 @@
-import inspect
-import importlib
+# -*- coding: utf-8 -*-
+
 from collections import defaultdict
+from .algorithms import is_bipartite
+from .traversals import traversals
 
 
 class Graph:
 
-    traversals = {getattr(klass, 'traversal_strategy'): klass for (_, klass)
-                  in inspect.getmembers(importlib.import_module(__name__ + '.traversals'), inspect.isclass)
-                  if hasattr(klass, 'traversal_strategy')}
+    DIRECTED = 0
+    UNDIRECTED = 1
 
     def __init__(self, **kwargs):
         self.v = kwargs.get('v', [])
         self.e = defaultdict(list)
+        self.kind = kwargs.get('kind', Graph.DIRECTED)
 
         if 'e' in kwargs:
             self.append_edges(kwargs.get('e'))
@@ -19,8 +21,18 @@ class Graph:
     def add_vertex(self, vertex):
         self.v.append(vertex)
 
-    def add_edge(self, source, destiny):
-        self.e[self.v.index(source)].append(self.v.index(destiny))
+    def add_edge(self, source, dest):
+
+        if source not in self.v:
+            self.add_vertex(source)
+
+        if dest not in self.v:
+            self.add_vertex(dest)
+
+        self.e[self.v.index(source)].append(self.v.index(dest))
+
+        if self.kind == Graph.UNDIRECTED:
+            self.e[self.v.index(dest)].append(self.v.index(source))
 
     def append_edges(self, edges):
         for (v, edges) in edges:
@@ -39,9 +51,10 @@ class Graph:
         return str(self.items())
 
     def traversal(self, strategy='simple', **kwargs):
-        if strategy in self.traversals:
-            return self.traversals[strategy](graph=self).traverse(**kwargs)
+        if strategy in traversals:
+            return traversals[strategy](graph=self).traverse(**kwargs)
         else:
             raise ValueError('No graph traversal strategy found by the name of {}'.format(strategy))
 
-
+    def is_bipartite(self):
+        return is_bipartite(self)
